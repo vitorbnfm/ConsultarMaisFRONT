@@ -1,0 +1,11 @@
+<h1>Medicos</h1>
+
+<ol>
+    <li *ngFor="let medico of medicos">
+        crm: {{ medico.crm }}
+        nome: {{ medico.nome }}
+        especialidade: {{ medico.especialidade }}
+    </li>
+</ol>
+
+<button ><a routerLink="/medico/cadastrar">Cadastrar novo medico</a></button>
