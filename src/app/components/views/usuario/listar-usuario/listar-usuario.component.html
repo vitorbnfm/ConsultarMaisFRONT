@@ -1,0 +1,12 @@
+<h1>Usuarios</h1>
+
+<ol>
+    <li *ngFor="let usuario of usuarios">
+        
+        nome: {{ usuario.nome }}
+        login: {{ usuario.login }}
+        senha: {{ usuario.senha }}
+    </li>
+</ol>
+<br>
+<button ><a routerLink="/usuario/cadastrar">Cadastrar novo usuario</a></button>
