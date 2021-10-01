@@ -1,3 +1,4 @@
+<h1 style="text-align:center">Cadastrar consulta</h1>
 <div id="dataconsulta">
     <label for="dataconsulta">Data da consulta:</label>
     <input type="text" name="dataconsulta" [(ngModel)]="dataconsulta" />
@@ -10,5 +11,7 @@
     <label for="paciente">Paciente:</label>
     <input type="text" name="paciente" [(ngModel)]="paciente" />
 </div>
-
+<br>
 <button (click)="cadastrar()">Cadastrar</button>
+<br><br>
+<button ><a routerLink="/consulta/listar">Voltar</a></button>
