@@ -12,8 +12,6 @@ import { CadastrarConsultaComponent } from './components/views/consulta/cadastra
 import { ListarConsultaComponent } from './components/views/consulta/listar-consulta/listar-consulta.component';
 import { CadastrarUsuarioComponent } from './components/views/usuario/cadastrar-usuario/cadastrar-usuario.component';
 import { ListarUsuarioComponent } from './components/views/usuario/listar-usuario/listar-usuario.component';
-import { DeleteConsultaComponent } from './components/views/consulta/delete-consulta/delete-consulta.component';
-
 
 @NgModule({
   declarations: [
@@ -25,12 +23,13 @@ import { DeleteConsultaComponent } from './components/views/consulta/delete-cons
     CadastrarConsultaComponent,
     ListarConsultaComponent,
     CadastrarUsuarioComponent,
-    ListarUsuarioComponent,
-    DeleteConsultaComponent,
+    ListarUsuarioComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

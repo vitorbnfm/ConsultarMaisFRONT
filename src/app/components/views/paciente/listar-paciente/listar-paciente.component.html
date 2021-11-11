@@ -1,0 +1,13 @@
+<h1 style="text-align:center">Pacientes</h1>
+
+<ol>
+    <li *ngFor="let paciente of pacientes">
+        nome: {{ paciente.nome }}
+        datanascimento: {{ paciente.datanascimento }}
+        endereco: {{ paciente.endereco }}
+        celular: {{ paciente.celular }}
+        email: {{ paciente.email }}
+    </li>
+</ol>
+<br>
+<button ><a routerLink="/paciente/cadastrar">Cadastrar novo paciente</a></button>

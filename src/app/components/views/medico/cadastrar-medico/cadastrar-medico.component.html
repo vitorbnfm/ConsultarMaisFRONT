@@ -1,0 +1,17 @@
+<h1 style="text-align:center">Cadastrar médico</h1>
+<div id="crm">
+    <label for="crm">CRM:</label>
+    <input type="text" name="crm" [(ngModel)]="crm" />
+</div>
+<div id="nome">
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome" [(ngModel)]="nome" />
+</div>
+<div id="especialidade">
+    <label for="especialidade">Especialidade:</label>
+    <input type="text" name="especialidade" [(ngModel)]="especialidade" />
+</div>
+<br>
+<button (click)="cadastrar()">Cadastrar</button>
+<br><br>
+<button ><a routerLink="/medico/listar">Voltar</a></button>
