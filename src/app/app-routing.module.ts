@@ -1,3 +1,4 @@
+import { TelaLoginComponent } from './components/views/tela-login/tela-login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrarConsultaComponent } from './components/views/consulta/cadastrar-consulta/cadastrar-consulta.component';
@@ -12,7 +13,7 @@ import { ListarUsuarioComponent } from './components/views/usuario/listar-usuari
 const routes: Routes = [
   {
       path: "",
-      component: ListarConsultaComponent,
+      component: TelaLoginComponent,
   },
   //paciente
   {

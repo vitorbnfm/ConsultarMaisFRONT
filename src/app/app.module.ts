@@ -12,6 +12,15 @@ import { CadastrarConsultaComponent } from './components/views/consulta/cadastra
 import { ListarConsultaComponent } from './components/views/consulta/listar-consulta/listar-consulta.component';
 import { CadastrarUsuarioComponent } from './components/views/usuario/cadastrar-usuario/cadastrar-usuario.component';
 import { ListarUsuarioComponent } from './components/views/usuario/listar-usuario/listar-usuario.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TemplateComponent } from './components/template/template.component';
+import { TelaLoginComponent } from './components/views/tela-login/tela-login.component';
+// Angular Material
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -23,13 +32,21 @@ import { ListarUsuarioComponent } from './components/views/usuario/listar-usuari
     CadastrarConsultaComponent,
     ListarConsultaComponent,
     CadastrarUsuarioComponent,
-    ListarUsuarioComponent
+    ListarUsuarioComponent,
+    TemplateComponent,
+    TelaLoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
