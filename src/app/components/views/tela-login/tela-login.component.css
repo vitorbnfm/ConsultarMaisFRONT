@@ -3,7 +3,7 @@
 .fundo {
     height: calc(100vh - 64px); /* 64px referente ao toolbar */
     width: 100%;
-    background-image: url(./img/fundo-tela-login.jpg);
+    background-image: url(./img/teste.png);
     background-size: cover;
 }
 
