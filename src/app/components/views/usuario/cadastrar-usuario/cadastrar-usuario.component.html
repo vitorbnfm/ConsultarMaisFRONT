@@ -1,17 +1,25 @@
-<div id="nome">
-    <label for="nome">Nome:</label>
-    <input type="text" name="nome" [(ngModel)]="nome" />
+<div class="principal">
+    <div class="quadro-conteudo">
+        <form>
+            <mat-form-field appearance="legacy">
+                <mat-label for="nome">Nome:</mat-label>
+                <input matInput type="text" name="nome" [(ngModel)]="nome" />
+            </mat-form-field>
+            <mat-form-field appearance="legacy">
+                <mat-label for="login">Email:</mat-label>
+                <input matInput [formControl]="email" type="text" name="login" [(ngModel)]="login" required />
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="legacy">
+                <mat-label for="senha">Senha:</mat-label>
+                <input matInput [formControl]="password" name="senha" [(ngModel)]="senha" required/>
+                <mat-error *ngIf="password.invalid">{{getPassError()}}</mat-error>
+            </mat-form-field>
+        </form>
+        <p id="captionCadastro"></p>
+        <div class="botoes">
+            <button mat-raised-button color="basic" class="botao" [disabled]="password.invalid || email.invalid" (click)="cadastrar()">Cadastrar</button>
+            <button mat-raised-button color="warn" routerLink="">Voltar</button>
+        </div>
+    </div>
 </div>
-<div id="login">
-    <label for="login">login:</label>
-    <input type="text" name="login" [(ngModel)]="login" />
-</div>
-<div id="senha">
-    <label for="senha">senha:</label>
-    <input type="text" name="senha" [(ngModel)]="senha" />
-</div>
-<br>
-<button (click)="cadastrar()">Cadastrar</button>
-<br><br>
-<button ><a routerLink="/usuario/listar">Voltar</a></button>
-

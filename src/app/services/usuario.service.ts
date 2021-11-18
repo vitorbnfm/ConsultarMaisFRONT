@@ -19,4 +19,8 @@ export class UsuarioService {
   create(usuario: Usuario): Observable<Usuario> {
       return this.http.post<Usuario>(`${this.baseURL}/create`, usuario);
   }
+
+  logar(usuario: Usuario) : Observable<Usuario[]> {
+    return this.http.get<Usuario[]>(`${this.baseURL}/login?login=${usuario.login}&&senha=${usuario.senha}`);
+  }
 }
