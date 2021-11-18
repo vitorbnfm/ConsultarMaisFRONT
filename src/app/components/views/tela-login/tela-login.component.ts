@@ -1,6 +1,9 @@
+import { ListarConsultaComponent } from './../consulta/listar-consulta/listar-consulta.component';
+import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-tela-login',
@@ -8,25 +11,49 @@ import { Usuario } from 'src/app/models/usuario';
   styleUrls: ['./tela-login.component.css']
 })
 export class TelaLoginComponent implements OnInit {
+  email = new FormControl('', [Validators.required, Validators.email]);
+  password = new FormControl('', [Validators.required]);
+
+  getErrorMessage() {
+
+    if (this.email.hasError('required')) {
+      return "Campo obrigatório";
+    }
+
+    return this.email.hasError('email') ? 'Email inválido' : "";
+  }
+
+  getPassError() {
+
+    return this.password.hasError('required') ? 'Campo obrigatório' : "";
+
+  }
 
   nome!: string;
   login!: string;
   senha!: string;
+  token!: string;
 
-  constructor(private service: UsuarioService) { }
+  constructor(private service: UsuarioService, private router: Router) { }
 
   ngOnInit(): void {
+    if (localStorage.getItem("token") != null) {
+      localStorage.removeItem("token");
+    }
   }
 
-  logar() : void {
+  logar(): void {
     let credenciais: Usuario = {
       nome: this.nome,
       login: this.login,
       senha: this.senha,
+      token: this.token,
     }
-    
+
     this.service.logar(credenciais).subscribe((credenciais) => {
-      console.log(credenciais);
+      credenciais.senha = "";
+      localStorage.setItem("token", JSON.stringify(credenciais.token));
+      this.router.navigate(['consulta/listar']);
     })
   }
 

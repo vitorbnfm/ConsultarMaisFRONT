@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Consulta } from 'src/app/models/consulta';
 import { ConsultaService } from 'src/app/services/consulta.service';
 
@@ -9,13 +10,11 @@ import { ConsultaService } from 'src/app/services/consulta.service';
 })
 export class ListarConsultaComponent implements OnInit {
   consultas: Consulta[] = [];
-  constructor(private service: ConsultaService) { }
+  constructor(private service: ConsultaService, private router: Router) { }
 
   ngOnInit(): void {
     this.service.list().subscribe((consulta => {
-      console.log(consulta);
       this.consultas = consulta;
     }));
   }
-
 }

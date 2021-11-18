@@ -33,6 +33,7 @@ export class CadastrarUsuarioComponent implements OnInit {
   nome!: string;
   login!: string;
   senha!: string;
+  token!: string;
 
 
   constructor(private service: UsuarioService, private router: Router) { }
@@ -46,12 +47,12 @@ export class CadastrarUsuarioComponent implements OnInit {
       nome: this.nome,
       login: this.login,
       senha: this.senha,
+      token: this.token,
     };
 
     this.service.create(usuario).subscribe((usuario) => {
       legenda!.innerHTML = "<span>Usuário cadastrado com sucesso! <br> Você será redirecionado para a tela de login...</span>";
       legenda?.classList.add("success");
-
       setInterval(() => {
         this.router.navigate([""]);
       }, 4000)
