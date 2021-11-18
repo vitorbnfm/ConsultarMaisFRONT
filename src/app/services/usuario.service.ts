@@ -2,6 +2,7 @@ import { Usuario } from './../models/usuario';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,8 @@ export class UsuarioService {
   constructor(private http: HttpClient) { }
 
   list(): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>(`${this.baseURL}/list`);
-  }
+    return this.http.get<Usuario[]>(`${this.baseURL}/list`)
+  };
 
   create(usuario: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>(`${this.baseURL}/create`, usuario);

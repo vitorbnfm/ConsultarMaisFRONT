@@ -1,3 +1,5 @@
+import { ListarConsultaComponent } from './../consulta/listar-consulta/listar-consulta.component';
+import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
@@ -32,22 +34,26 @@ export class TelaLoginComponent implements OnInit {
   senha!: string;
   token!: string;
 
-  constructor(private service: UsuarioService) { }
+  constructor(private service: UsuarioService, private router: Router) { }
 
   ngOnInit(): void {
+    if (localStorage.getItem("token") != null) {
+      localStorage.removeItem("token");
+    }
   }
 
-  logar() : void {
+  logar(): void {
     let credenciais: Usuario = {
       nome: this.nome,
       login: this.login,
       senha: this.senha,
       token: this.token,
     }
-    
+
     this.service.logar(credenciais).subscribe((credenciais) => {
       credenciais.senha = "";
-      console.log(credenciais.token);
+      localStorage.setItem("token", JSON.stringify(credenciais.token));
+      this.router.navigate(['consulta/listar']);
     })
   }
 

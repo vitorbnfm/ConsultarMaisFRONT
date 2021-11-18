@@ -9,14 +9,20 @@ import { Consulta } from '../models/consulta';
 export class ConsultaService {
   private baseURL = "http://localhost:5000/api/paciente";
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   list(): Observable<Consulta[]> {
-      return this.http.get<Consulta[]>(`${this.baseURL}/list`);
+    let cab = {
+      "Authorization": `Bearer ${JSON.parse(localStorage.getItem("token")!)}`
+    };
+
+    return this.http.get<Consulta[]>(`${this.baseURL}/list`, {
+      headers: cab,
+    });
   }
 
   create(consulta: Consulta): Observable<Consulta> {
-      return this.http.post<Consulta>(`${this.baseURL}/create`, consulta);
+    return this.http.post<Consulta>(`${this.baseURL}/create`, consulta);
   }
 
   delete(id: number): Observable<Consulta> {
@@ -26,4 +32,4 @@ export class ConsultaService {
   update(consulta: Consulta): Observable<Consulta> {
     return this.http.put<Consulta>(`${this.baseURL}/update`, consulta);
   }
-} 
+}

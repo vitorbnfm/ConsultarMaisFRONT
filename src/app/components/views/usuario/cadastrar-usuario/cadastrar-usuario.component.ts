@@ -53,7 +53,6 @@ export class CadastrarUsuarioComponent implements OnInit {
     this.service.create(usuario).subscribe((usuario) => {
       legenda!.innerHTML = "<span>Usuário cadastrado com sucesso! <br> Você será redirecionado para a tela de login...</span>";
       legenda?.classList.add("success");
-
       setInterval(() => {
         this.router.navigate([""]);
       }, 4000)
