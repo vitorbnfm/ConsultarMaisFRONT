@@ -5,14 +5,18 @@
         <form class="credenciais">
             <mat-form-field appearance="legacy">
                 <mat-label>Email</mat-label>
-                <input matInput  placeholder="Ex: pat@outlook.com" name="login" [(ngModel)]="login" />
+                <input matInput [formControl]="email" placeholder="Ex: pat@outlook.com" name="login"
+                    [(ngModel)]="login" />
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
             </mat-form-field>
             <mat-form-field appearance="legacy">
                 <mat-label>Senha</mat-label>
-                <input matInput  type="password" name="senha" [(ngModel)]="senha" />
+                <input matInput [formControl]="password" name="senha" [(ngModel)]="senha" />
+                <mat-error *ngIf="password.invalid">{{getPassError()}}</mat-error>
             </mat-form-field>
 
-            <button mat-raised-button color="warn" (click)="logar()" class="botao">Entrar</button>
+            <button mat-raised-button color="warn" (click)="logar()" class="botao"
+                [disabled]="email.invalid || password.invalid">Entrar</button>
             <a routerLink="/usuario/cadastrar" class="mt mat-caption">Ainda não é cadastrado? Clique aqui</a>
         </form>
     </div>
