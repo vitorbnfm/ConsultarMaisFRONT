@@ -24,12 +24,13 @@ export class TelaLoginComponent implements OnInit {
   getPassError() {
 
     return this.password.hasError('required') ? 'Campo obrigatório' : "";
-    
+
   }
 
   nome!: string;
   login!: string;
   senha!: string;
+  token!: string;
 
   constructor(private service: UsuarioService) { }
 
@@ -41,11 +42,12 @@ export class TelaLoginComponent implements OnInit {
       nome: this.nome,
       login: this.login,
       senha: this.senha,
+      token: this.token,
     }
     
     this.service.logar(credenciais).subscribe((credenciais) => {
-      console.log(credenciais);
-      console.log("Deu certo");
+      credenciais.senha = "";
+      console.log(credenciais.token);
     })
   }
 
