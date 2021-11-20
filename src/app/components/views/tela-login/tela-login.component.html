@@ -11,7 +11,7 @@
             </mat-form-field>
             <mat-form-field appearance="legacy">
                 <mat-label>Senha</mat-label>
-                <input matInput [formControl]="password" name="senha" [(ngModel)]="senha" />
+                <input matInput type="password" [formControl]="password" name="senha" [(ngModel)]="senha" />
                 <mat-error *ngIf="password.invalid">{{getPassError()}}</mat-error>
             </mat-form-field>
 
