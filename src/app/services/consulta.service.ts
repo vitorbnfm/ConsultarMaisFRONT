@@ -7,7 +7,7 @@ import { Consulta } from '../models/consulta';
   providedIn: 'root'
 })
 export class ConsultaService {
-  private baseURL = "http://localhost:5000/api/paciente";
+  private baseURL = "http://localhost:5000/api/consulta"; // funcionando a busca de consulta por cada usuário logado
 
   constructor(private http: HttpClient) { }
 
@@ -16,7 +16,7 @@ export class ConsultaService {
       "Authorization": `Bearer ${JSON.parse(localStorage.getItem("token")!)}`
     };
 
-    return this.http.get<Consulta[]>(`${this.baseURL}/list`, {
+    return this.http.get<Consulta[]>(`${this.baseURL}/listbyuser/${JSON.parse(sessionStorage.getItem("userId")!)}`, {
       headers: cab,
     });
   }

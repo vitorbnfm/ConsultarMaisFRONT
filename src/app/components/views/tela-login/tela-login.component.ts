@@ -29,7 +29,9 @@ export class TelaLoginComponent implements OnInit {
 
   }
 
+  id?: number;
   nome!: string;
+  celular!: string;
   login!: string;
   senha!: string;
   token!: string;
@@ -44,7 +46,9 @@ export class TelaLoginComponent implements OnInit {
 
   logar(): void {
     let credenciais: Usuario = {
+      id: this.id,
       nome: this.nome,
+      celular: this.celular,
       login: this.login,
       senha: this.senha,
       token: this.token,
@@ -53,6 +57,7 @@ export class TelaLoginComponent implements OnInit {
     this.service.logar(credenciais).subscribe((credenciais) => {
       credenciais.senha = "";
       localStorage.setItem("token", JSON.stringify(credenciais.token));
+      sessionStorage.setItem("userId", JSON.stringify(credenciais.id));
       this.router.navigate(['consulta/listar']);
     })
   }

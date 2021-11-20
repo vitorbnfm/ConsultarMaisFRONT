@@ -3,7 +3,11 @@
         <form>
             <mat-form-field appearance="legacy">
                 <mat-label for="nome">Nome:</mat-label>
-                <input matInput type="text" name="nome" [(ngModel)]="nome" />
+                <input matInput type="text" name="nome" [(ngModel)]="nome" required/>
+            </mat-form-field>
+            <mat-form-field appearance="legacy">
+                <mat-label for="nome">Celular:</mat-label>
+                <input matInput type="text" name="celular" [(ngModel)]="celular" required/>
             </mat-form-field>
             <mat-form-field appearance="legacy">
                 <mat-label for="login">Email:</mat-label>
