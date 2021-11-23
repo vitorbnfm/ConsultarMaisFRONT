@@ -17,6 +17,10 @@ export class UsuarioService {
     return this.http.get<Usuario[]>(`${this.baseURL}/list`)
   };
 
+  listbyid(): Observable<Usuario> {
+    return this.http.get<Usuario>(`${this.baseURL}/getbyid/${JSON.parse(sessionStorage.getItem("userId")!)}`)
+  }
+
   create(usuario: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>(`${this.baseURL}/create`, usuario);
   }
