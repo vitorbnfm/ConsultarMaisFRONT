@@ -9,12 +9,13 @@ import { ConsultaService } from 'src/app/services/consulta.service';
   styleUrls: ['./listar-consulta.component.css']
 })
 export class ListarConsultaComponent implements OnInit {
-  consultas: Consulta[] = [];
+  consultas: any[] = [];
   constructor(private service: ConsultaService, private router: Router) { }
 
   ngOnInit(): void {
     this.service.list().subscribe((consulta => {
       this.consultas = consulta;
+      console.log(consulta);
     }));
   }
 }

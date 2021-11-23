@@ -1,7 +1,8 @@
 export interface Consulta {
     id?: number;
     dataconsulta: string;
-    medico: string;
-    paciente: string;
+    datanascimento: string;
+    medicoId: number;
+    usuarioId: number;
     criadoem?: string;
 }
