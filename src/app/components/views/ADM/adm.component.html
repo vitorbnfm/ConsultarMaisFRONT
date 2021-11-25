@@ -1,0 +1,33 @@
+<mat-accordion>
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Médico
+            </mat-panel-title>
+            <mat-panel-description>
+                Operações básicas com o modelo Médico
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div>
+            <button routerLink="/medico/cadastrar" mat-raised-button>Cadastrar</button>
+            <button routerLink="/medico/atualizar" mat-raised-button color="primary">Atualizar</button>
+            <button routerLink="/medico/listar" mat-raised-button color="accent">Listar</button>
+            <button routerLink="/medico/deletar" mat-raised-button color="warn">Deletar</button>
+        </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Usuário
+            </mat-panel-title>
+            <mat-panel-description>
+                Operações básicas com o modelo Usuário
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div>
+            <button mat-raised-button color="primary">Atualizar</button>
+            <button mat-raised-button color="accent">Listar</button>
+            <button mat-raised-button color="warn">Deletar</button>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>

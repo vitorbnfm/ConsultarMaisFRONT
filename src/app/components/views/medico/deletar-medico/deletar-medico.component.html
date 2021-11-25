@@ -1,0 +1,39 @@
+<table mat-table [dataSource]="medicos" class="table mat-elevation-z8">
+    <!-- Coluna do Nome -->
+    <ng-container matColumnDef="ID">
+        <th class="header" mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let item">
+            {{ item.id }}
+        </td>
+
+    </ng-container>
+    <!-- Coluna de Quantidade -->
+    <ng-container matColumnDef="CRM">
+        <th class="header" mat-header-cell *matHeaderCellDef>
+            CRM
+        </th>
+        <td mat-cell *matCellDef="let item">{{ item.crm }}</td>
+    </ng-container>
+    <ng-container matColumnDef="Nome">
+        <th class="header" mat-header-cell *matHeaderCellDef>
+            Nome
+        </th>
+        <td mat-cell *matCellDef="let item">{{ item.nome }}</td>
+    </ng-container>
+    <ng-container matColumnDef="Especialidade">
+        <th class="header" mat-header-cell *matHeaderCellDef>
+            Especialidade
+        </th>
+        <td mat-cell *matCellDef="let item">{{ item.especialidade }}</td>
+    </ng-container>
+    <ng-container matColumnDef="Ação">
+        <th class="header" mat-header-cell *matHeaderCellDef>
+            Ação
+        </th>
+        <td mat-cell *matCellDef="let item">
+            <button mat-raised-button color="warn" (click)="deletar(item.id)">Deletar</button>
+        </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="colunasExibidas"></tr>
+    <tr mat-row *matRowDef="let row; columns: colunasExibidas"></tr>
+</table>
