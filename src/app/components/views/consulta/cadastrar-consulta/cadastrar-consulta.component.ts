@@ -1,5 +1,7 @@
 import { MedicoService } from './../../../../services/medico.service';
+
 import { Usuario } from './../../../../models/usuario';
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Consulta } from 'src/app/models/consulta';
@@ -20,6 +22,7 @@ export class CadastrarConsultaComponent implements OnInit {
   usuarioId!: number;
   datanascimento!: string;
   arrayMedicos: Medico[] = [];
+
 
   constructor(private service: ConsultaService, private userService: UsuarioService, private medService: MedicoService, private router: Router) { }
 
@@ -44,9 +47,11 @@ export class CadastrarConsultaComponent implements OnInit {
       datanascimento: this.datanascimento,
     };
 
+
     this.service.create(consulta).subscribe((consulta) => {
       console.log(consulta);
       this.router.navigate(["consulta/listar"]);
     });
+
   }
 }
