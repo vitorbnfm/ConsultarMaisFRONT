@@ -1,10 +1,11 @@
-<h1 style="text-align:center">Consultas cadastradas</h1>
+<h1>Consultas</h1>
 
 <ol>
     <li *ngFor="let consulta of consultas">
-        Consulta: {{ consulta.dataConsulta }}
-        Médico: {{ consulta.medico.nome }}
+        dataconsulta: {{ consulta.dataconsulta }}
+        medico: {{ consulta.medico }}
+        paciente: {{ consulta.paciente }}
     </li>
 </ol>
-<br>
-<button ><a routerLink="/consulta/cadastrar">Cadastrar nova consulta</a></button>
+
+<button ><a routerLink="/medico/cadastrar">Cadastrar nova consulta</a></button>

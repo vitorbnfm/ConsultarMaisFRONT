@@ -2,7 +2,6 @@ import { Usuario } from './../models/usuario';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -11,21 +10,13 @@ export class UsuarioService {
 
   private baseURL = "http://localhost:5000/api/usuario";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   list(): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>(`${this.baseURL}/list`)
-  };
-
-  listbyid(): Observable<Usuario> {
-    return this.http.get<Usuario>(`${this.baseURL}/getbyid/${JSON.parse(sessionStorage.getItem("userId")!)}`)
+      return this.http.get<Usuario[]>(`${this.baseURL}/list`);
   }
 
   create(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>(`${this.baseURL}/create`, usuario);
-  }
-
-  logar(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>(`${this.baseURL}/login`, usuario);
+      return this.http.post<Usuario>(`${this.baseURL}/create`, usuario);
   }
 }

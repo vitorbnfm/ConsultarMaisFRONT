@@ -1,13 +1,9 @@
 import { MedicoService } from './../../../../services/medico.service';
-
-import { Usuario } from './../../../../models/usuario';
-
+import { PacienteService } from './../../../../services/paciente.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Consulta } from 'src/app/models/consulta';
 import { ConsultaService } from 'src/app/services/consulta.service';
-import { UsuarioService } from 'src/app/services/usuario.service';
-import { Medico } from 'src/app/models/medico';
 
 @Component({
   selector: 'app-cadastrar-consulta',
@@ -17,41 +13,22 @@ import { Medico } from 'src/app/models/medico';
 export class CadastrarConsultaComponent implements OnInit {
   dataconsulta!: string;
   medico!: string;
-  medicoId!: number;
-  usuario!: string;
-  usuarioId!: number;
-  datanascimento!: string;
-  arrayMedicos: Medico[] = [];
+  paciente!: string;
 
+  constructor(private consultaService: ConsultaService, pacienteService: PacienteService, medicoService: MedicoService, private router: Router) {}
 
-  constructor(private service: ConsultaService, private userService: UsuarioService, private medService: MedicoService, private router: Router) { }
-
-  ngOnInit(): void {
-    let usuario = this.userService.listbyid().subscribe((a) => {
-      this.usuario = a.nome;
-      this.usuarioId = a.id!;
-    });
-
-    let medicos = this.medService.list().subscribe((a) => {
-      this.arrayMedicos = a;
-      console.log(this.arrayMedicos);
-    })
-  };
+  ngOnInit(): void {}
 
   cadastrar(): void {
-    
-    let consulta: Consulta = {
-      dataconsulta: this.dataconsulta,
-      medicoId: this.medicoId,
-      usuarioId: this.usuarioId,
-      datanascimento: this.datanascimento,
-    };
+      let consulta: Consulta = {
+        dataconsulta: this.dataconsulta,
+        medico: this.medico,
+        paciente: this.paciente,
 
-
-    this.service.create(consulta).subscribe((consulta) => {
-      console.log(consulta);
-      this.router.navigate(["consulta/listar"]);
-    });
-
+      };
+      this.consultaService.create(consulta).subscribe((consulta) => {
+          console.log(consulta);
+          this.router.navigate(["consulta/listar"]);
+      });
   }
 }

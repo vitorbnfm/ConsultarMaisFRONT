@@ -7,24 +7,16 @@ import { Consulta } from '../models/consulta';
   providedIn: 'root'
 })
 export class ConsultaService {
+  private baseURL = "http://localhost:5000/api/consulta";
 
-  private baseURL = "http://localhost:5000/api/consulta"; // funcionando a busca de consulta por cada usuário logado
-
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   list(): Observable<Consulta[]> {
-    let cab = {
-      "Authorization": `Bearer ${JSON.parse(localStorage.getItem("token")!)}`
-    };
-
-    return this.http.get<Consulta[]>(`${this.baseURL}/listbyuser/${JSON.parse(sessionStorage.getItem("userId")!)}`, {
-      headers: cab,
-    });
+      return this.http.get<Consulta[]>(`${this.baseURL}/list`);
   }
 
   create(consulta: Consulta): Observable<Consulta> {
-    return this.http.post<Consulta>(`${this.baseURL}/create`, consulta);
+      return this.http.post<Consulta>(`${this.baseURL}/create`, consulta);
   }
 
   delete(id: number): Observable<Consulta> {
@@ -34,4 +26,4 @@ export class ConsultaService {
   update(consulta: Consulta): Observable<Consulta> {
     return this.http.put<Consulta>(`${this.baseURL}/update`, consulta);
   }
-}
+} 

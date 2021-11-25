@@ -3,9 +3,9 @@ import { Medico } from './medico';
 export interface Consulta {
     id?: number;
     dataconsulta: string;
-
-    datanascimento: string;
+    medico?: Medico;
     medicoId: number;
-
+    paciente?: Paciente; 
+    pacienteId: number;
     criadoem?: string;
 }
