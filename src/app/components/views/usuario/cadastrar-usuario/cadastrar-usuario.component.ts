@@ -34,6 +34,7 @@ export class CadastrarUsuarioComponent implements OnInit {
   celular!: string;
   login!: string;
   senha!: string;
+  tipo!: string;
   token!: string;
 
 
@@ -49,6 +50,7 @@ export class CadastrarUsuarioComponent implements OnInit {
       celular: this.celular,
       login: this.login,
       senha: this.senha,
+      tipo: "User",
       token: this.token,
     };
 

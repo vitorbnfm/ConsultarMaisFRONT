@@ -15,12 +15,17 @@ import { ListarUsuarioComponent } from './components/views/usuario/listar-usuari
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TemplateComponent } from './components/template/template.component';
 import { TelaLoginComponent } from './components/views/tela-login/tela-login.component';
+import { ADMComponent } from './components/views/ADM/adm.component';
 // Angular Material
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {MatTableModule} from '@angular/material/table';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { AtualizarMedicoComponent } from './components/views/medico/atualizar-medico/atualizar-medico.component';
+import { DeletarMedicoComponent } from './components/views/medico/deletar-medico/deletar-medico.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +39,10 @@ import { MatInputModule } from '@angular/material/input';
     CadastrarUsuarioComponent,
     ListarUsuarioComponent,
     TemplateComponent,
-    TelaLoginComponent
+    TelaLoginComponent,
+    ADMComponent,
+    AtualizarMedicoComponent,
+    DeletarMedicoComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +55,9 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

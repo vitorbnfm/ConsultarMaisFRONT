@@ -1,3 +1,5 @@
+import { DeletarMedicoComponent } from './components/views/medico/deletar-medico/deletar-medico.component';
+import { AtualizarMedicoComponent } from './components/views/medico/atualizar-medico/atualizar-medico.component';
 import { TelaLoginComponent } from './components/views/tela-login/tela-login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,20 +11,21 @@ import { CadastrarPacienteComponent } from './components/views/paciente/cadastra
 import { ListarPacienteComponent } from './components/views/paciente/listar-paciente/listar-paciente.component';
 import { CadastrarUsuarioComponent } from './components/views/usuario/cadastrar-usuario/cadastrar-usuario.component';
 import { ListarUsuarioComponent } from './components/views/usuario/listar-usuario/listar-usuario.component';
+import { ADMComponent } from './components/views/ADM/adm.component';
 
 const routes: Routes = [
   {
-      path: "",
-      component: TelaLoginComponent,
+    path: "",
+    component: TelaLoginComponent,
   },
   //paciente
   {
-      path: "paciente/listar",
-      component: ListarPacienteComponent,
+    path: "paciente/listar",
+    component: ListarPacienteComponent,
   },
   {
-      path: "paciente/cadastrar",
-      component: CadastrarPacienteComponent,
+    path: "paciente/cadastrar",
+    component: CadastrarPacienteComponent,
   },
 
   //medico
@@ -33,6 +36,14 @@ const routes: Routes = [
   {
     path: "medico/cadastrar",
     component: CadastrarMedicoComponent,
+  },
+  {
+    path: "medico/atualizar",
+    component: AtualizarMedicoComponent,
+  },
+  {
+    path: "medico/deletar",
+    component: DeletarMedicoComponent,
   },
   //consulta
   {
@@ -52,6 +63,11 @@ const routes: Routes = [
     path: "usuario/cadastrar",
     component: CadastrarUsuarioComponent,
   },
+  // adm
+  {
+    path: "adm/inicio",
+    component: ADMComponent,
+  }
 
 
 

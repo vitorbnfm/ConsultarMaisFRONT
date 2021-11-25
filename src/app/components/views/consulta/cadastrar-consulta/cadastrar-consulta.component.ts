@@ -37,7 +37,7 @@ export class CadastrarConsultaComponent implements OnInit {
 
   cadastrar(): void {
     
-    let consulta: Consulta = {
+    let consulta: any = {
       dataconsulta: this.dataconsulta,
       medicoId: this.medicoId,
       usuarioId: this.usuarioId,

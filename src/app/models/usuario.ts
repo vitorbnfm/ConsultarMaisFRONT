@@ -4,5 +4,6 @@ export interface Usuario {
     celular: string;
     login: string;
     senha: string;
+    tipo: string;
     token: string;
 }
