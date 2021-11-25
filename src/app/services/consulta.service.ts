@@ -7,7 +7,7 @@ import { Consulta } from '../models/consulta';
   providedIn: 'root'
 })
 export class ConsultaService {
-  private baseURL = "http://localhost:5000/api/paciente";
+  private baseURL = "http://localhost:5000/api/consulta";
 
   constructor(private http: HttpClient) {}
 

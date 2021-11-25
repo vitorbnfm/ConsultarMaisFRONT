@@ -1,3 +1,5 @@
+import { MedicoService } from './../../../../services/medico.service';
+import { PacienteService } from './../../../../services/paciente.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Consulta } from 'src/app/models/consulta';
@@ -13,7 +15,7 @@ export class CadastrarConsultaComponent implements OnInit {
   medico!: string;
   paciente!: string;
 
-  constructor(private service: ConsultaService, private router: Router) {}
+  constructor(private consultaService: ConsultaService, pacienteService: PacienteService, medicoService: MedicoService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -24,7 +26,7 @@ export class CadastrarConsultaComponent implements OnInit {
         paciente: this.paciente,
 
       };
-      this.service.create(consulta).subscribe((consulta) => {
+      this.consultaService.create(consulta).subscribe((consulta) => {
           console.log(consulta);
           this.router.navigate(["consulta/listar"]);
       });
