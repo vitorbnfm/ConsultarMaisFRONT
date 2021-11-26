@@ -22,7 +22,7 @@ export class DeletarMedicoComponent implements OnInit {
   deletar(id: number): void {
     this.medicoService.delete(id).subscribe((res) => {
       alert("Médico deletado");
-      location.reload();;
+      location.reload();
     })
   }
 
