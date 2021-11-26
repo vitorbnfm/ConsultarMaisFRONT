@@ -14,6 +14,7 @@ export class ListarMedicoComponent implements OnInit {
   ngOnInit(): void {
     this.service.list().subscribe((medico => {
       console.log(medico);
+      
       this.medicos = medico;
     }));
   }
