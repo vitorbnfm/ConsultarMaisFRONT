@@ -21,12 +21,17 @@ export class ListarConsultaComponent implements OnInit {
 
 
 
+
+
   ngOnInit(): void {
     this.service.list().subscribe((consulta => {
+<<<<<<< HEAD
 <<<<<<< HEAD
       console.log(consulta);
 =======
 >>>>>>> 7789dcc... Alterações no Médico e ADM Components. Feita requisição para deletar o médico e visual da página do adm
+=======
+>>>>>>> 7789dcc5ba023132334965559f52ded8013adccd
       this.consultas = consulta;
     }));
   }

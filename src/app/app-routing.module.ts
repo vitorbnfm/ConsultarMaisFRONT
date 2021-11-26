@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 7789dcc5ba023132334965559f52ded8013adccd
 import { DeletarMedicoComponent } from './components/views/medico/deletar-medico/deletar-medico.component';
 import { AtualizarMedicoComponent } from './components/views/medico/atualizar-medico/atualizar-medico.component';
 import { TelaLoginComponent } from './components/views/tela-login/tela-login.component';
@@ -19,12 +22,17 @@ import { ADMComponent } from './components/views/ADM/adm.component';
 const routes: Routes = [
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
       path: "",
       component: ListarConsultaComponent,
 =======
     path: "",
     component: TelaLoginComponent,
 >>>>>>> 7789dcc... Alterações no Médico e ADM Components. Feita requisição para deletar o médico e visual da página do adm
+=======
+    path: "",
+    component: TelaLoginComponent,
+>>>>>>> 7789dcc5ba023132334965559f52ded8013adccd
   },
   //paciente
   {

@@ -28,7 +28,10 @@ import {MatTableModule} from '@angular/material/table';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { AtualizarMedicoComponent } from './components/views/medico/atualizar-medico/atualizar-medico.component';
 import { DeletarMedicoComponent } from './components/views/medico/deletar-medico/deletar-medico.component';
+<<<<<<< HEAD
 >>>>>>> 7789dcc... Alterações no Médico e ADM Components. Feita requisição para deletar o médico e visual da página do adm
+=======
+>>>>>>> 7789dcc5ba023132334965559f52ded8013adccd
 
 @NgModule({
   declarations: [
@@ -49,7 +52,10 @@ import { DeletarMedicoComponent } from './components/views/medico/deletar-medico
     ADMComponent,
     AtualizarMedicoComponent,
     DeletarMedicoComponent,
+<<<<<<< HEAD
 >>>>>>> 7789dcc... Alterações no Médico e ADM Components. Feita requisição para deletar o médico e visual da página do adm
+=======
+>>>>>>> 7789dcc5ba023132334965559f52ded8013adccd
   ],
   imports: [
     BrowserModule,
@@ -68,7 +74,10 @@ import { DeletarMedicoComponent } from './components/views/medico/deletar-medico
     ReactiveFormsModule,
     MatTableModule,
     MatExpansionModule
+<<<<<<< HEAD
 >>>>>>> 7789dcc... Alterações no Médico e ADM Components. Feita requisição para deletar o médico e visual da página do adm
+=======
+>>>>>>> 7789dcc5ba023132334965559f52ded8013adccd
   ],
   providers: [],
   bootstrap: [AppComponent]
