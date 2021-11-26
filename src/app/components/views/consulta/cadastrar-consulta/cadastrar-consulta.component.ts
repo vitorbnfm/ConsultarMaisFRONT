@@ -1,3 +1,6 @@
+import { UsuarioService } from 'src/app/services/usuario.service';
+import { Usuario } from 'src/app/models/usuario';
+import { Medico } from 'src/app/models/medico';
 import { MedicoService } from './../../../../services/medico.service';
 import { PacienteService } from './../../../../services/paciente.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,28 +14,38 @@ import { ConsultaService } from 'src/app/services/consulta.service';
   styleUrls: ['./cadastrar-consulta.component.css']
 })
 export class CadastrarConsultaComponent implements OnInit {
+  arrayMedicos: any[] = [];
+
   dataconsulta!: string;
   medico!: string;
   paciente!: string;
   medicoId!: number;
   usuarioId!: number;
+  usuario!: string;
   datanascimento!: string;
 
-  constructor(private consultaService: ConsultaService, pacienteService: PacienteService, medicoService: MedicoService, private router: Router) { }
+  constructor(private consultaService: ConsultaService, private medicoService: MedicoService, private usuarioService: UsuarioService, private router: Router) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.medicoService.list().subscribe((medicos) => {
+      this.arrayMedicos = medicos;
+    });
+
+    this.usuarioService.listbyid().subscribe(usuario => {
+      this.usuario = usuario.nome;
+    })
+   }
 
   cadastrar(): void {
 
     let consulta: any = {
       dataconsulta: this.dataconsulta,
       medicoId: this.medicoId,
-      usuarioId: this.usuarioId,
+      usuarioId: sessionStorage.getItem("userId"),
       datanascimento: this.datanascimento,
     };
 
     this.consultaService.create(consulta).subscribe((consulta) => {
-      console.log(consulta);
       this.router.navigate(["consulta/listar"]);
     });
   };
