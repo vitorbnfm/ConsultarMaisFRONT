@@ -1,11 +1,36 @@
-<h1 style="text-align:center">Consultas cadastradas</h1>
+<!-- <h1 style="text-align:center">Consultas cadastradas</h1>
 
 <ol>
     <li *ngFor="let consulta of consultas">
-        dataconsulta: {{ consulta.dataconsulta }}
-        medico: {{ consulta.medico }}
-        paciente: {{ consulta.paciente }}
+        Consulta: {{ consulta.dataConsulta }}
+        Médico: {{ consulta.medico.nome }}
     </li>
 </ol>
 <br>
+<<<<<<< HEAD
 <button ><a routerLink="/consulta/cadastrar">Cadastrar nova consulta</a></button>
+=======
+-->
+<table mat-table [dataSource]="consultas" class="table mat-elevation-z8">
+    <!-- Coluna do Nome -->
+    <ng-container matColumnDef="Data da Consulta">
+        <th class="header" mat-header-cell *matHeaderCellDef>Data da Consulta</th>
+        <td mat-cell *matCellDef="let item">
+            {{ item.dataConsulta }}
+
+        </td>
+
+    </ng-container>
+    <!-- Coluna de Quantidade -->
+    <ng-container matColumnDef="Médico">
+        <th class="header" mat-header-cell *matHeaderCellDef>
+            Médico
+        </th>
+        <td mat-cell *matCellDef="let item">{{ item.medico.nome }}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="colunasExibidas"></tr>
+    <tr mat-row *matRowDef="let row; columns: colunasExibidas"></tr>
+</table>
+
+<button mat-raised-button><a routerLink="/consulta/cadastrar">Cadastrar nova consulta</a></button>
+>>>>>>> mucharski-develop-igor

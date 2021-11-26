@@ -19,7 +19,12 @@ export class MedicoService {
       return this.http.post<Medico>(`${this.baseURL}/create`, medico);
   }
   delete(id: number): Observable<Medico> {
-    return this.http.delete<Medico>(`${this.baseURL}/delete/${id}`);
+    let cab = {
+      "Authorization": `Bearer ${JSON.parse(localStorage.getItem("token")!)}`
+    };
+    return this.http.delete<Medico>(`${this.baseURL}/delete/${id}`, {
+      headers: cab,
+    });
   }
 
   update(medico: Medico): Observable<Medico> {
