@@ -9,15 +9,11 @@
     <label for="dataconsulta">Data da consulta:</label>
     <input type="text" name="dataconsulta" [(ngModel)]="dataconsulta" />
 </div>
-<div id="medico">
-    <label for="medico">Data de nascimento:</label>
-    <input type="text" name="medico" [(ngModel)]="datanascimento" disabled/>
-</div>
-<div id="paciente">
-    <label for="paciente">Paciente:</label>
-    <input type="text" name="paciente" [(ngModel)]="usuario" id="nomePaciente" disabled />
+<div id="usuario">
+    <label for="usuario">Paciente:</label>
+    <input type="text" name="usuario" [(ngModel)]="usuario" id="nomeUsuario"/>
 </div>
 <br>
-<button (click)="cadastrar()">Cadastrar</button>
+<button (click)="cadastrar()" routerLink="/consulta/listar">Cadastrar</button>
 <br><br>
 <button><a routerLink="/consulta/listar">Voltar</a></button>

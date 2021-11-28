@@ -2,7 +2,6 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 import { Usuario } from 'src/app/models/usuario';
 import { Medico } from 'src/app/models/medico';
 import { MedicoService } from './../../../../services/medico.service';
-import { PacienteService } from './../../../../services/paciente.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Consulta } from 'src/app/models/consulta';
@@ -18,7 +17,6 @@ export class CadastrarConsultaComponent implements OnInit {
 
   dataconsulta!: string;
   medico!: string;
-  paciente!: string;
   medicoId!: number;
   usuarioId!: number;
   usuario!: string;

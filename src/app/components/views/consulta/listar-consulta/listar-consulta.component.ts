@@ -1,8 +1,6 @@
-import { DataSource } from '@angular/cdk/collections';
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Consulta } from 'src/app/models/consulta';
-import { ConsultaService } from 'src/app/services/consulta.service';
+import { Component, OnInit } from "@angular/core";
+import { ConsultaService } from "src/app/services/consulta.service";
+import { Consulta } from "./../../../../models/consulta";
 
 
 @Component({
@@ -10,17 +8,22 @@ import { ConsultaService } from 'src/app/services/consulta.service';
   templateUrl: './listar-consulta.component.html',
   styleUrls: ['./listar-consulta.component.css']
 })
+
+
+
 export class ListarConsultaComponent implements OnInit {
-  consultas: any[] = [];
-  colunasExibidas: String[] = ["Data da Consulta", "Médico"];
-  constructor(private service: ConsultaService, private router: Router) { }
+  consultas: Consulta[] = [];
+  colunasExibidas: String[] = [
+      "dataconsulta",
+      "usuario",
+      "medico",
+  ];
 
-
+  constructor(private service: ConsultaService) {}
 
   ngOnInit(): void {
-    this.service.list().subscribe((consulta => {
-      this.consultas = consulta;
-    }));
+      this.service.list().subscribe((consultas) => {
+          this.consultas = consultas;
+      });
   }
-
 }
