@@ -7,8 +7,6 @@ import { CadastrarConsultaComponent } from './components/views/consulta/cadastra
 import { ListarConsultaComponent } from './components/views/consulta/listar-consulta/listar-consulta.component';
 import { CadastrarMedicoComponent } from './components/views/medico/cadastrar-medico/cadastrar-medico.component';
 import { ListarMedicoComponent } from './components/views/medico/listar-medico/listar-medico.component';
-import { CadastrarPacienteComponent } from './components/views/paciente/cadastrar-paciente/cadastrar-paciente.component';
-import { ListarPacienteComponent } from './components/views/paciente/listar-paciente/listar-paciente.component';
 import { CadastrarUsuarioComponent } from './components/views/usuario/cadastrar-usuario/cadastrar-usuario.component';
 import { ListarUsuarioComponent } from './components/views/usuario/listar-usuario/listar-usuario.component';
 import { ADMComponent } from './components/views/ADM/adm.component';
@@ -17,15 +15,6 @@ const routes: Routes = [
   {
     path: "",
     component: TelaLoginComponent,
-  },
-  //paciente
-  {
-    path: "paciente/listar",
-    component: ListarPacienteComponent,
-  },
-  {
-    path: "paciente/cadastrar",
-    component: CadastrarPacienteComponent,
   },
 
   //medico
