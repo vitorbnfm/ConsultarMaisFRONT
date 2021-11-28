@@ -23,28 +23,27 @@ export class CadastrarUsuarioComponent implements OnInit {
   }
 
   getPassError() {
-    if (this.password.hasError('required')) {
-      return "Campo obrigatório";
-    }
+     if (this.password.hasError('required')) {
+       return "Campo obrigatório";
+     }
 
-    return this.password.hasError('minlength') ? 'A senha deve conter, no mínimo, 8 caracteres' : "";
+     return this.password.hasError('minlength') ? 'A senha deve conter, no mínimo, 8 caracteres' : "";
   }
 
-  nome!: string;
-  celular!: string;
-  login!: string;
-  senha!: string;
-  tipo!: string;
-  token!: string;
+   nome!: string;
+   celular!: string;
+   login!: string;
+   senha!: string;
+   tipo!: string;
+   token!: string;
 
+   constructor(private service: UsuarioService, private router: Router) { }
 
-  constructor(private service: UsuarioService, private router: Router) { }
+   ngOnInit(): void { }
 
-  ngOnInit(): void { }
-
-  cadastrar(): void {
-    let legenda = document.getElementById("captionCadastro");
-    let usuario: Usuario = {
+   cadastrar(): void {
+     let legenda = document.getElementById("captionCadastro");
+     let usuario: Usuario = {
 
       nome: this.nome,
       celular: this.celular,
@@ -55,18 +54,17 @@ export class CadastrarUsuarioComponent implements OnInit {
     };
 
     this.service.create(usuario).subscribe((usuario) => {
-      legenda!.innerHTML = "<span>Usuário cadastrado com sucesso! <br> Você será redirecionado para a tela de login...</span>";
-      legenda?.classList.add("success");
+       legenda!.innerHTML = "<span>Usuário cadastrado com sucesso! <br> Você será redirecionado para a tela de login...</span>";
+       legenda?.classList.add("success");
 
 
-      setInterval(() => {
+    setInterval(() => {
         this.router.navigate([""]);
       }, 4000)
 
     }, err => {
-      console.log(legenda!.innerHTML = `<span> ${err.error} </span>`);
-      legenda?.classList.add("error");
+       console.log(legenda!.innerHTML = `<span> ${err.error} </span>`);
+       legenda?.classList.add("error");
     });
-
   }
 }

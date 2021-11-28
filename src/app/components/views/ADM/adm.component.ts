@@ -13,5 +13,4 @@ export class ADMComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

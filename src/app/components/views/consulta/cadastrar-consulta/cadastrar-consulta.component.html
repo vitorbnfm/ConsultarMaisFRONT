@@ -1,23 +1,27 @@
 <h1 style="text-align:center">Cadastrar consulta</h1>
 <div id="dataconsulta">
-    <label>Médico:</label>
-    <select name="listaMedicos" [(ngModel)]="medicoId">
-        <option *ngFor="let med of arrayMedicos" [value]="med.id">{{med.nome}}</option>
-    </select>
+     <label>Médico:</label>
+     <select name="listaMedicos" [(ngModel)]="medicoId">
+         <option *ngFor="let med of arrayMedicos" [value]="med.id">{{med.nome}}</option>
+     </select>
 </div>
 <div id="dataconsulta">
-    <label for="dataconsulta">Data da consulta:</label>
-    <input type="text" name="dataconsulta" [(ngModel)]="dataconsulta" />
+     <label for="dataconsulta">Data da consulta:</label>
+     <input type="text" name="dataconsulta" [(ngModel)]="dataconsulta" />
 </div>
 <div id="medico">
-    <label for="medico">Data de nascimento:</label>
-    <input type="text" name="medico" [(ngModel)]="datanascimento" disabled/>
+     <label for="medico">Data de nascimento:</label>
+     <input type="text" name="medico" [(ngModel)]="datanascimento" disabled/>
 </div>
 <div id="paciente">
-    <label for="paciente">Paciente:</label>
-    <input type="text" name="paciente" [(ngModel)]="usuario" id="nomePaciente" disabled />
+     <label for="paciente">Paciente:</label>
+     <input type="text" name="paciente" [(ngModel)]="usuario" id="nomePaciente" disabled />
 </div>
+
 <br>
-<button (click)="cadastrar()">Cadastrar</button>
-<br><br>
-<button><a routerLink="/consulta/listar">Voltar</a></button>
+
+<button (click)="cadastrar()">Cadastrar</button> 
+
+<br><br> 
+
+<button><a routerLink="/consulta/listar">Voltar</a></button> 
