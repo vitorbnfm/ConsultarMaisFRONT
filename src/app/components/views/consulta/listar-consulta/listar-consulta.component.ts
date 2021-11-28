@@ -15,15 +15,16 @@ export class ListarConsultaComponent implements OnInit {
   consultas: Consulta[] = [];
   colunasExibidas: String[] = [
       "dataconsulta",
-      "usuario",
       "medico",
+      "especialidade",
   ];
 
   constructor(private service: ConsultaService) {}
 
   ngOnInit(): void {
-      this.service.list().subscribe((consultas) => {
+      this.service.listbyid().subscribe((consultas) => {
           this.consultas = consultas;
+          console.log(consultas);
       });
   }
 }
