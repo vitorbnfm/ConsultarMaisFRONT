@@ -1,17 +1,17 @@
-<h1 style="text-align:center">Cadastrar consulta</h1>
+<h1 class="center">Cadastrar consulta</h1>
 <div id="dataconsulta">
-    <label for="dataconsulta">Data da consulta:</label>
+    <label for="dataconsulta">Data da consulta: </label>
     <input type="text" name="dataconsulta" [(ngModel)]="dataconsulta" />
 </div>
 <div id="medico">
-    <label for="medico">Data de nascimento:</label>
+    <label for="medico">Data de nascimento: </label>
     <input type="text" name="medico" [(ngModel)]="medico" />
 </div>
 <div id="paciente">
-    <label for="paciente">Paciente:</label>
+    <label for="paciente">Paciente: </label>
     <input type="text" name="paciente" [(ngModel)]="paciente" />
 </div>
 <br>
-<button (click)="cadastrar()">Cadastrar</button>
+<button (click)="cadastrar()" class="btn">Cadastrar</button>
 <br><br>
-<button ><a routerLink="/consulta/listar">Voltar</a></button>
+<button class="btn"><a routerLink="/consulta/listar">Voltar</a></button>
