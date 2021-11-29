@@ -1,25 +1,25 @@
-<h1 style="text-align:center">Cadastrar paciente</h1>
+<h1 class= "center">Cadastrar paciente</h1>
 <div id="nome">
-    <label for="nome">Nome:</label>
+    <label for="nome">Nome: </label>
     <input type="text" name="nome" [(ngModel)]="nome" />
 </div>
 <div id="datanascimento">
-    <label for="datanascimento">Data de nascimento:</label>
+    <label for="datanascimento">Data de nascimento: </label>
     <input type="text" name="datanascimento" [(ngModel)]="datanascimento" />
 </div>
 <div id="endereco">
-    <label for="endereco">Endereço:</label>
+    <label for="endereco">Endereço: </label>
     <input type="text" name="endereco" [(ngModel)]="endereco" />
 </div>
 <div id="celular">
-    <label for="celular">Celular:</label>
+    <label for="celular">Celular: </label>
     <input type="text" name="celular" [(ngModel)]="celular" />
 </div>
 <div id="email">
-    <label for="email">Email:</label>
+    <label for="email">Email: </label>
     <input type="text" name="email" [(ngModel)]="email" />
 </div>
 <br>
-<button (click)="cadastrar()">Cadastrar</button>
+<button (click)="cadastrar()" class="btn">Cadastrar</button>
 <br><br>
-<button ><a routerLink="/paciente/listar">Voltar</a></button>
+<button class="btn"><a routerLink="/paciente/listar">Voltar</a></button>
