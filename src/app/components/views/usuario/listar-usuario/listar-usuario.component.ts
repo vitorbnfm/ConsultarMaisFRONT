@@ -7,6 +7,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   templateUrl: './listar-usuario.component.html',
   styleUrls: ['./listar-usuario.component.css']
 })
+
 export class ListarUsuarioComponent implements OnInit {
   usuarios: Usuario[] = [];
   constructor(private service: UsuarioService) { }
@@ -17,5 +18,4 @@ export class ListarUsuarioComponent implements OnInit {
       this.usuarios = usuario;
     }));
   }
-
 }

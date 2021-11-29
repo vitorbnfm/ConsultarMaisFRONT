@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './deletar-medico.component.html',
   styleUrls: ['./deletar-medico.component.css']
 })
+
 export class DeletarMedicoComponent implements OnInit {
   medicos: any[] = [];
   colunasExibidas: String[] = ["ID", "CRM", "Nome", "Especialidade", "Ação"];
@@ -25,7 +26,4 @@ export class DeletarMedicoComponent implements OnInit {
       location.reload();
     })
   }
-
-
-
 }
