@@ -4,8 +4,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { CadastrarPacienteComponent } from './components/views/paciente/cadastrar-paciente/cadastrar-paciente.component';
-import { ListarPacienteComponent } from './components/views/paciente/listar-paciente/listar-paciente.component';
+
 import { CadastrarMedicoComponent } from './components/views/medico/cadastrar-medico/cadastrar-medico.component';
 import { ListarMedicoComponent } from './components/views/medico/listar-medico/listar-medico.component';
 import { CadastrarConsultaComponent } from './components/views/consulta/cadastrar-consulta/cadastrar-consulta.component';
@@ -26,12 +25,15 @@ import {MatTableModule} from '@angular/material/table';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { AtualizarMedicoComponent } from './components/views/medico/atualizar-medico/atualizar-medico.component';
 import { DeletarMedicoComponent } from './components/views/medico/deletar-medico/deletar-medico.component';
+import { MatCardModule } from "@angular/material/card";
+import { MatSelectModule } from "@angular/material/select";
+import { MatListModule } from "@angular/material/list";
+import { MatGridListModule } from "@angular/material/grid-list";
+import { MatSidenavModule } from "@angular/material/sidenav";
 
 @NgModule({
   declarations: [
     AppComponent,
-    CadastrarPacienteComponent,
-    ListarPacienteComponent,
     CadastrarMedicoComponent,
     ListarMedicoComponent,
     CadastrarConsultaComponent,
@@ -57,7 +59,12 @@ import { DeletarMedicoComponent } from './components/views/medico/deletar-medico
     MatInputModule,
     ReactiveFormsModule,
     MatTableModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatCardModule,
+    MatSelectModule,
+    MatGridListModule,
+    MatListModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

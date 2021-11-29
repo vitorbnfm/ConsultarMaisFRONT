@@ -1,27 +1,33 @@
-<h1 style="text-align:center">Cadastrar consulta</h1>
-<div id="dataconsulta">
-     <label>Médico:</label>
-     <select name="listaMedicos" [(ngModel)]="medicoId">
-         <option *ngFor="let med of arrayMedicos" [value]="med.id">{{med.nome}}</option>
-     </select>
-</div>
-<div id="dataconsulta">
-     <label for="dataconsulta">Data da consulta:</label>
-     <input type="text" name="dataconsulta" [(ngModel)]="dataconsulta" />
-</div>
-<div id="medico">
-     <label for="medico">Data de nascimento:</label>
-     <input type="text" name="medico" [(ngModel)]="datanascimento" disabled/>
-</div>
-<div id="paciente">
-     <label for="paciente">Paciente:</label>
-     <input type="text" name="paciente" [(ngModel)]="usuario" id="nomePaciente" disabled />
-</div>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Cadastrar Consulta</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-form-field class="input" id="dataconsulta">
+            <mat-label for="dataconsulta">data consulta:</mat-label>
+            <input matInput type="date" name="dataconsulta" [(ngModel)]="dataconsulta" />
+        </mat-form-field>
+        <br>
+        <mat-form-field class="input" id="usuario">
+            <mat-label for="usuario">Paciente:</mat-label>
+            <input matInput type="text" name="usuario"[(ngModel)]="usuario" id="usuario" disabled />
+        </mat-form-field>
+        <br>
+        <mat-form-field class="input" id="medico">
+            <mat-label for="medico">Medico:</mat-label>
+            <mat-select name="medico" [(ngModel)]="medicoId">
+                <mat-option
+                    *ngFor="let medico of medicos"
+                    value="{{ medico.id }}"
+                >
+                    {{ medico.nome }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-card-content>
 
-<br>
 
-<button (click)="cadastrar()">Cadastrar</button> 
 
-<br><br> 
-
-<button><a routerLink="/consulta/listar">Voltar</a></button> 
+    <button mat-raised-button color="warn" (click)="agendar()">
+        Agendar
+    </button>
